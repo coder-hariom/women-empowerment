@@ -1,0 +1,217 @@
+/* Base */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #1e1f24;
+    color: #fff;
+  }
+  section {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  /* Header Ring */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: #121317;
+  }
+  .orbit-container {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    animation: spin 4s linear infinite;
+  }
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    background: url('img/logo.png') center/cover no-repeat;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .dot {
+    --angle: calc(90deg * var(--i));
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: #fcd34d;
+    border-radius: 50%;
+    transform: rotate(var(--angle)) translateX(25px);
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  
+  /* Nav */
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+  nav a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  nav a:hover {
+    color: #fcd34d;
+  }
+  
+  /* Hero */
+  .hero {
+    position: relative;
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: flex-start;
+    padding: 4rem 2rem;
+  }
+  .hero-content h1 {
+    font-size: 3rem;
+    color: #fcd34d;
+    margin: 0;
+  }
+  .hero-content p {
+    color: #d1d5db;
+    margin: .5rem 0;
+    font-size: 1.2rem;
+  }
+  .hero-content button {
+    border: 2px solid #fcd34d;
+    background: transparent;
+    padding: .6rem 1.2rem;
+    border-radius: 5px;
+    color: #fcd34d;
+    cursor: pointer;
+  }
+  .hero-content button:hover {
+    background: #fcd34d;
+    color: #1e1f24;
+  }
+  .social-icons {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .social-icons .line {
+    width: 2px;
+    height: 100px;
+    background: #fcd34d;
+    margin-bottom: 1rem;
+  }
+  .social-icons a img {
+    width: 24px;
+    margin: .5rem 0;
+    filter: invert(100%);
+  }
+  
+  /* About */
+  #about h2 {
+    font-size: 2rem;
+    color: #fcd34d;
+    margin-bottom: .7rem;
+  }
+  #about p {
+    color: #d1d5db;
+    line-height: 1.6;
+  }
+  .highlight {
+    color: #fcd34d;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  
+  /* Portfolio */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .portfolio-box {
+    background: #2c2f36;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+  }
+  .portfolio-box img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: .5rem;
+  }
+  .btn {
+    display: inline-block;
+    margin-top: .5rem;
+    padding: .4rem 1rem;
+    border: 2px solid #fcd34d;
+    color: #fcd34d;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  .btn:hover {
+    background: #fcd34d;
+    color: #1e1f24;
+  }
+  
+  /* Team */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .team-box {
+    background: #2c2f36;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+  }
+  .team-box img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: .5rem;
+  }
+  
+  /* Contact Chips */
+  #contact h2 {
+    font-size: 2rem;
+    color: #fcd34d;
+    margin-bottom: .7rem;
+  }
+  .contact-chips {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    background: #fcd34d;
+    color: #1e1f24;
+    padding: .6rem 1rem;
+    border-radius: 5px;
+    font-weight: 500;
+  }
+  .chip img {
+    width: 16px;
+    height: 16px;
+  }
