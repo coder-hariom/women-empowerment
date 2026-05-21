@@ -4,17 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Team Bliss</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Header with rotating ring -->
-  <header>
+
+  <!-- CANVAS BACKGROUND -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="bg-mesh"></div>
+
+  <!-- HEADER -->
+  <header id="main-header">
     <div class="orbit-container">
-      <div class="center"></div>
-      <div class="dot" style="--i:0"></div>
-      <div class="dot" style="--i:1"></div>
-      <div class="dot" style="--i:2"></div>
-      <div class="dot" style="--i:3"></div>
+      <div class="orbit-ring"></div>
+      <div class="center-dot"></div>
+      <div class="orbit-dot"></div>
+      <div class="orbit-dot"></div>
+      <div class="orbit-dot"></div>
+      <div class="orbit-dot"></div>
     </div>
     <nav>
       <ul>
@@ -22,107 +30,212 @@
         <li><a href="#about">About</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#team">Our Team</a></li>
-        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1>Our Moto</h1>
-      <p>Empowering Women, Securing Lives</p>
-      <button>Contact Me</button>
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobile-nav">
+    <button class="close-btn" id="close-nav">✕</button>
+    <a href="#home"      class="mob-link">Home</a>
+    <a href="#about"     class="mob-link">About</a>
+    <a href="#portfolio" class="mob-link">Portfolio</a>
+    <a href="#team"      class="mob-link">Our Team</a>
+    <a href="#contact"   class="mob-link">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero-particles" id="hero-particles"></div>
+    <div class="hero-inner">
+      <span class="hero-badge">✦ Hackathon 2025 Project</span>
+      <h1>Empowering Women,<br><span>Securing Lives</span></h1>
+      <p class="hero-sub">Digital safety tools built by Team Bliss — because every woman deserves a secure online future.</p>
+      <div class="hero-btns">
+        <a href="#portfolio" class="btn-primary">Explore Projects</a>
+        <a href="#about"     class="btn-outline">Meet the Team</a>
+      </div>
     </div>
-    <div class="social-icons">
-      <div class="line"></div>
-      <a href="#"><img src="twitter.png" alt="Twitter"></a>
-      <a href="#"><img src="instragam.png" alt="Instagram"></a>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-left reveal">
+      <p class="section-label">Who We Are</p>
+      <h2 class="section-title"><span class="accent">About</span><br>Team Bliss</h2>
     </div>
-</section>
+    <div class="about-right reveal from-right">
+      <p><strong>TEAM BLISS</strong> is a dedicated group of innovators with a clear mission: to enhance digital safety and empower women in the online space.</p>
+      <p>Recognizing the unique challenges that women face in the digital world, our team combines expertise in user experience design and social impact to create solutions that are both effective and accessible.</p>
+      <p>We're passionate about developing tools and platforms that protect women from online threats, foster a safe digital environment, and educate users on best practices for staying secure online.</p>
+      <div class="about-stats stagger-children">
+        <div class="stat-box">
+          <div class="num">6+</div>
+          <div class="lbl">Projects Built</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">2</div>
+          <div class="lbl">Team Members</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">1</div>
+          <div class="lbl">Hackathon</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- About -->
-<section id="about">
-  <h2><span class="underline-a">A</span>bout</h2>
-  <p><strong>TEAM BLISS</strong> is a dedicated group of innovators with a clear mission: to enhance digital safety and empower women in the online space.</p>
-  <p>Recognizing the unique challenges that women face in the digital world, our team combines expertise in user experience design and social impact to create solutions that are both effective and accessible.</p>
-  <p>We’re passionate about developing tools and platforms that protect women from online threats, foster a safe digital environment, and educate users on the best practices for staying secure online.</p>
-  <p>At this hackathon, we’re not just coding—we’re building a safer digital future for women everywhere.</p>
-</section>
+  <div class="section-divider"></div>
 
-
-  <!-- Portfolio Section -->
+  <!-- PORTFOLIO -->
   <section id="portfolio">
-    <h2>Portfolio</h2>
-    <div class="portfolio-grid">
+    <div class="section-header reveal">
+      <p class="section-label">What We Built</p>
+      <h2 class="section-title">Our <span class="accent">Portfolio</span></h2>
+    </div>
+    <div class="portfolio-grid stagger-children">
+
       <div class="portfolio-box">
-        <img src="digitalsafety.jpg" alt="Digital Safety">
-        <h3>Digital Safety</h3>
-        <p>Cyberbullying | Stalking</p>
-        <a class="btn" href="https://youtu.be/6oQssKbhGA8?feature=shared" target="_blank">Explore Now</a>
+        <div class="portfolio-img-placeholder">🛡️</div>
+        <div class="portfolio-body">
+          <span class="portfolio-tag">Cyber Safety</span>
+          <h3>Digital Safety</h3>
+          <p>Fighting cyberbullying and online stalking with practical tools.</p>
+          <a class="btn-card" href="https://youtu.be/6oQssKbhGA8?feature=shared" target="_blank">Explore →</a>
+        </div>
       </div>
+
       <div class="portfolio-box">
-        <img src="societymentality.jpg" alt="Society Mentality">
-        <h3>Society Mentality</h3>
-        <p>Empowering introverted girls</p>
-        <a class="btn" href="https://youtu.be/scvi2EemtDw?feature=shared" target="_blank">Explore Now</a>
+        <div class="portfolio-img-placeholder">💪</div>
+        <div class="portfolio-body">
+          <span class="portfolio-tag">Empowerment</span>
+          <h3>Society Mentality</h3>
+          <p>Empowering introverted girls to find their voice and confidence.</p>
+          <a class="btn-card" href="https://youtu.be/scvi2EemtDw?feature=shared" target="_blank">Explore →</a>
+        </div>
       </div>
+
       <div class="portfolio-box">
-        <img src="commuteplanner.jpg" alt="Safe Commute Planner">
-        <h3>Safe Commute Planner</h3>
-        <p>Mapping safe travel routes.</p>
-        <a class="btn" href="https://www.linkedin.com/in/Lavlesh0808yadav" target="_blank">Explore Now</a>
+        <div class="portfolio-img-placeholder">🗺️</div>
+        <div class="portfolio-body">
+          <span class="portfolio-tag">Safety</span>
+          <h3>Safe Commute Planner</h3>
+          <p>Mapping verified safe travel routes for daily commuters.</p>
+          <a class="btn-card" href="https://www.linkedin.com/in/Lavlesh0808yadav" target="_blank">Explore →</a>
+        </div>
       </div>
+
       <div class="portfolio-box">
-        <img src="emergencyalert.jpg" alt="Emergency SOS Alert">
-        <h3>Emergency SOS Alert</h3>
-        <p>Instant SOS to trusted contacts.</p>
-        <a class="btn" href="#" target="_blank">Explore More</a>
+        <div class="portfolio-img-placeholder">🤖</div>
+        <div class="portfolio-body">
+          <span class="portfolio-tag">AI · Wellness</span>
+          <h3>AI Wellness Chatbot</h3>
+          <p>24/7 emotional support assistant powered by AI — always here for you.</p>
+          <button class="btn-card" onclick="openChat()">Chat Now →</button>
+        </div>
       </div>
+
       <div class="portfolio-box">
-        <img src="linkedinscrapper.jpg" alt="LinkedIn Scrapper">
-        <h3>LinkedIn Scrapper</h3>
-        <p>Safe networking tool.</p>
-        <a class="btn" href="#" target="_blank">Explore More</a>
+        <div class="portfolio-img-placeholder">🔗</div>
+        <div class="portfolio-body">
+          <span class="portfolio-tag">Networking</span>
+          <h3>LinkedIn Scrapper</h3>
+          <p>A privacy-first safe networking tool for professional discovery.</p>
+          <a class="btn-card" href="#" target="_blank">Coming Soon</a>
+        </div>
       </div>
+
       <div class="portfolio-box">
-        <img src="wellnesschatbot.jpg" alt="Wellness Chatbot">
-        <h3>Wellness Chatbot</h3>
-        <p>24/7 emotional support assistant.</p>
-        <a class="btn" href="#" target="_blank">Explore More</a>
+        <div class="portfolio-img-placeholder">🌐</div>
+        <div class="portfolio-body">
+          <span class="portfolio-tag">Education</span>
+          <h3>Digital Literacy Hub</h3>
+          <p>Resources and guides to help women navigate the web safely.</p>
+          <a class="btn-card" href="#" target="_blank">Coming Soon</a>
+        </div>
       </div>
+
     </div>
   </section>
 
-  <!-- Team Section -->
+  <div class="section-divider"></div>
+
+  <!-- TEAM -->
   <section id="team">
-    <h2>Our Team</h2>
-    <h8>Empowered women empower the world. Together, our strength, resilience, and 
-      <p>dedication forge a safer future for every woman.</p></h8>
-    <div class="team-grid">
+    <p class="section-label reveal">The People Behind It</p>
+    <h2 class="section-title reveal">Our <span class="accent">Team</span></h2>
+    <p class="team-sub reveal from-bottom">Empowered women empower the world. Together, our strength, resilience, and dedication forge a safer future for every woman.</p>
+    <div class="team-grid stagger-children">
       <div class="team-box">
-        <img src="hariomtiwari.jpg" alt="Hari Om Tiwari">
+        <img class="team-avatar" src="hariomtiwari.jpg" alt="Hari Om Tiwari"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="team-avatar fallback-avatar">H</div>
         <h3>Hari Om Tiwari</h3>
-        <p>Project Manager & Lead Developer</p>
+        <div class="team-role">Project Manager & Lead Developer</div>
       </div>
       <div class="team-box">
-        <img src="lavleshkumar.jpg" alt="Lavlesh Kumar Yadav">
+        <img class="team-avatar" src="lavleshkumar.jpg" alt="Lavlesh Kumar Yadav"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="team-avatar fallback-avatar">L</div>
         <h3>Lavlesh Kumar Yadav</h3>
-        <p>UI/UX Designer</p>
+        <div class="team-role">UI/UX Designer</div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Us Section -->
+  <div class="section-divider"></div>
+
+  <!-- CONTACT -->
   <section id="contact">
-    <h2>Contact Us</h2>
-    <div class="contact-chips">
-      <div class="chip"><img src="college.png" alt="College">Delhi - Institute of Higher Education</div>
-      <div class="chip"><img src="contact.png" alt="Phone">+91 9155730264</div>
-      <div class="chip"><img src="loco.png" alt="Location">Noida, Uttar Pradesh</div>
+    <p class="section-label reveal">Get in Touch</p>
+    <h2 class="section-title reveal">Contact <span class="accent">Us</span></h2>
+    <div class="contact-chips stagger-children">
+      <div class="chip"><span class="chip-icon">🏛️</span> Delhi — Institute of Higher Education</div>
+      <div class="chip"><span class="chip-icon">📞</span> +91 9155730264</div>
+      <div class="chip"><span class="chip-icon">📍</span> Noida, Uttar Pradesh</div>
     </div>
   </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 <span>Team Bliss</span> · Built with ❤️ for a safer digital future</p>
+  </footer>
+
+  <!-- CHATBOT TOGGLE BUTTON -->
+  <button id="chat-toggle" aria-label="Open AI Chat" title="Chat with Bliss AI">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#0d0e14" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+  </button>
+
+  <!-- CHATBOT WINDOW -->
+  <div id="chat-window" role="dialog" aria-label="Bliss AI Chatbot">
+    <div class="chat-header">
+      <div class="chat-avatar">🤖</div>
+      <div>
+        <div class="chat-title">Bliss AI — Wellness Bot</div>
+        <div class="chat-status">Online &amp; Ready</div>
+      </div>
+      <button class="chat-close" id="chat-close-btn">✕</button>
+    </div>
+    <div class="chat-messages" id="chat-messages"></div>
+    <div class="chat-input-area">
+      <input id="chat-input" type="text" placeholder="Type a message…" autocomplete="off" maxlength="500" />
+      <button id="chat-send" aria-label="Send">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0d0e14" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"/>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+      </button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
-</html>
+  </html>
