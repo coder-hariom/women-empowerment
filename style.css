@@ -1,7 +1,4 @@
 
-  <!-- ═══════════════════════════════════════════
-       CSS — Global Variables & Reset
-  ═══════════════════════════════════════════ -->
   <style>
     /* ── VARIABLES ────────────────────────────── */
     :root {
@@ -867,4 +864,97 @@
       }
       #chat-toggle { bottom: 1.5rem; right: 1.5rem; }
     }
+
+/* ===== MOBILE HERO FIX ===== */
+
+@media (max-width: 600px) {
+
+  body{
+    overflow-x: hidden;
+  }
+
+  #home{
+    min-height: 100vh;
+    padding: 7rem 1.2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-inner{
+    width: 100%;
+  }
+
+  .hero-badge{
+    font-size: 0.75rem;
+    padding: 0.45rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-inner h1{
+    font-size: 3rem;
+    line-height: 1.1;
+    color: #ffffff;
+    font-weight: 900;
+    margin-bottom: 1rem;
+  }
+
+  .hero-inner h1 span{
+    color: #fcd34d;
+  }
+
+  .hero-sub{
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #cbd5e1;
+    margin-bottom: 2rem;
+    padding: 0 0.2rem;
+  }
+
+  .hero-btns{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .btn-primary,
+  .btn-outline{
+    width: 220px;
+    text-align: center;
+  }
+
+  header{
+    padding: 0.8rem 1rem;
+  }
+
+  .orbit-container{
+    width: 42px;
+    height: 42px;
+  }
+
+  .section-title{
+    font-size: 2.2rem;
+  }
+
+  .portfolio-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .about-stats{
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-box{
+    width: 100%;
+    max-width: 320px;
+  }
+
+}
   </style>
