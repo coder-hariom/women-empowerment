@@ -24,7 +24,6 @@ This project was developed by a team of 2 during a hackathon within a limited ti
 
 ## 🛠️ Tech Stack
 
-- React.js
 - JavaScript (ES6+)
 - REST APIs
 - AI/ML APIs
